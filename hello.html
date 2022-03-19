@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                font-family: tahoma;
+                text-align: center;
+            }
+            header {
+                letter-spacing: 6px;
+                color: white;
+                background-color: royalblue;
+                padding: 20px;
+            }
+            h2 {
+                font-size: 2em;
+                width: 100%;
+            }
+            section {
+                padding: 30px;
+                margin-bottom: 40px;
+            }
+            .container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        .card {
+            border: 1px solid #ccc;
+            background-color: ivory;
+            margin: 25px;
+            padding: 25px;
+            box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
+        }
+        .icons {
+            font-size: 8em;
+            padding: 25px;
+        }
+        button, .button {
+            background: royalblue;
+            border: 0;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .blue {
+            background: teal;
+        }
+        table {
+            margin: auto;
+        }
+        td {
+            padding: 10px;
+        }
+        #my-order {
+            background-color: #29C1C4;
+            padding: 25px;
+            display: none;
+        }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Sayyed Industries Inc.</h1>
+            <h4>Cute Cupcakes for best besties</h4>
+        </header>
+        <section>
+            <h2>Welcome</h2>
+            <p>Vision: To creat beautiful cupcakes for clients in London. To creat beautiful cupcakes for clients in London.
+                To creat beautiful cupcakes for clients in London.To creat beautiful cupcakes for clients in London.
+                To creat beautiful cupcakes for clients in London.
+            </p>
+            <br>
+            <br>
+            <p>About Us: Type and write anything you want about your company. Type and write anything you want about your company.
+                Type and write anything you want about your company.
+                Type and write anything you want about your company.Type and write anything you want about your company.
+                Type and write anything you want about your company.
+            </p>
+        </section>
+        <section class="blue container">
+            <h2> Services </h2>
+            <article class="card">
+                <div class="icons"> &#9749; </div>
+                <h3> Heading Title</h3>
+                <p>Write a paragraph about your heading title.
+                    Write a paragraph about your heading title.
+                    Write a paragraph about your heading title.
+                </p>
+                <button> Learn More </button>
+
+            </article>
+            <article class="card">
+                <div class="icons"> &#9734; </div>
+                <h3>Sub title</h3>
+                <p>Write any thing about sub title.Write any thing about sub title.
+                    Write any thing about sub title.
+                </p>
+                <button>Learn More</button>
+            </article>
+        </section>
+        <section>
+            <h2>ORDER FORM</h2>
+            <form id="my-form">
+            <table>
+                <tr>
+                    <td>Name: </td>
+                    <td> <input type="text" size="25" name="my-name"></td>
+                </tr>
+                <tr>
+                    <td> Address: </td>
+                    <td> <input type="text" size="25" name="my-address"></td>
+                </tr>
+                <tr>
+                    <td> Quantity: </td>
+                    <td> <input type="number" name="my-quantity" value="1" min="1" max="5">
+                    <small>(Max 5)</small>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>Favourite Item: </td>
+                    <td> <select name="fav-item">
+                        <option> Item 1 </option>
+                        <option> Item 2 </option>
+                        <option> Item 3 </option>
+                        <option> Item 4 </option>
+                        <option> Item 5 </option>
+                    </select></td>
+                </tr>
+                <tr><br></tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" class="button" value="Process Order" onclick="placeOrder()">
+                        <input type="reset" class="button" value="Clear" onclick = "document.getElementById('my-order').style.display = 'none'">
+                    </td>
+                </tr>
+            </table>
+            <div id="my-order"></div>
+            </form>
+        </section>
+        <script>
+            function placeOrder() {
+                var orderForm = document.getElementById("my-form");
+                result = "<h3>Success!</h3> Here is your order.";
+                result += "<br> Name: " + orderForm.elements["my-name"].value;
+                result += "<br> Address: " + orderForm.elements["my-address"].value;
+                result += "<br> Quantity: " + orderForm.elements["my-quantity"].value;
+                result += "<br> Favourite Item: " + orderForm.elements["fav-item"].value;
+                var orderResults = document.getElementById("my-order");
+                orderResults.style.display = "block";
+                orderResults.innerHTML = result;
+            }
+        </script>
+    </body>
+</html>
